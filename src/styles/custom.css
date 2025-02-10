@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import "./globals.css";
+body {
+    @apply font-advent;
+}
+
+.hello-text {
+    @apply text-4xl duration-300 uppercase;
+    font-variation-settings: "wght" 800, "wdth" 125;
+
+    &:hover {
+        font-variation-settings: "wght" 800, "wdth" 175;
+    }
+}
