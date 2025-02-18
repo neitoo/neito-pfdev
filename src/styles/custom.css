@@ -1,14 +1,41 @@
-@import "tailwindcss";
-@import "./globals.css";
+@import 'tailwindcss';
+@import './globals.css';
+
 body {
-    @apply font-advent;
+  @apply font-advent bg-zinc-700 text-zinc-100;
+}
+
+.noise {
+  @apply fixed 
+		z-[9999] 
+		top-[-300%] 
+		left-[-150%] 
+		h-[600%] 
+		w-[600%] 
+		pointer-events-none 
+		opacity-[.15]
+		bg-[url(src/assets/noise.png)]
+		bg-[200px]
+		animate-noise;
+}
+
+.container_base {
+  @apply mx-auto max-w-[96rem] px-25 2xl:px-0;
 }
 
 .hello-text {
-    @apply text-4xl duration-300 uppercase;
-    font-variation-settings: "wght" 800, "wdth" 125;
+  @apply text-4xl duration-300 uppercase;
+  font-variation-settings:
+    'wght' 800,
+    'wdth' 125;
 
-    &:hover {
-        font-variation-settings: "wght" 800, "wdth" 175;
-    }
+  &:hover {
+    font-variation-settings:
+      'wght' 800,
+      'wdth' 175;
+  }
+}
+
+.header {
+  @apply pointer-events-none fixed z-10 top-[1.5rem] sm:top-[4rem] lg:top-[6rem] left-0 right-0;
 }
