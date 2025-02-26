@@ -5,6 +5,7 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["./src/components/*"],
+      "@icons/*": ["./src/components/icons/*"],
       "@sections/*": ["./src/sections/*"],
       "@animations/*": ["./src/animations/*"],
       "@assets/*": ["./src/assets/*"],
@@ -15,7 +16,7 @@
       "@utils/*": ["./src/utils/*"],
       "@config/*": ["./src/config/*"],
       "@styles/*": ["./src/styles/*"],
-      "@pages/*": ["./src/pages/*"],
+      "@pages/*": ["./src/pages/*"]
     },
     "strict": true,
     "noEmit": true,

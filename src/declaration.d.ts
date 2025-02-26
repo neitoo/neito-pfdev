@@ -1,4 +1,5 @@
 declare module '@components/*'
+declare module '@icons/*'
 declare module '@sections/*'
 declare module '@animations/*'
 declare module '@assets/*'
