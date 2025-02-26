@@ -1,6 +1,11 @@
 @import 'tailwindcss';
 @import './globals.css';
 
+:root {
+  --top-margin: 240px;
+  --left-right-margin: 240px;
+}
+
 body {
   @apply font-advent bg-zinc-700 text-zinc-100;
 }
@@ -19,10 +24,6 @@ body {
 		animate-noise;
 }
 
-.container_base {
-  @apply mx-auto max-w-[96rem] px-25 2xl:px-0;
-}
-
 .hello-text {
   @apply text-4xl duration-300 uppercase;
   font-variation-settings:
@@ -37,5 +38,74 @@ body {
 }
 
 .header {
-  @apply pointer-events-none fixed z-10 top-[1.5rem] sm:top-[4rem] lg:top-[6rem] left-0 right-0;
+  @apply fixed w-full px-20 z-50 top-[1.5rem] sm:top-[4rem] lg:top-[6rem] left-0 right-0;
+}
+.header__content {
+  @apply w-full flex flex-row items-center justify-between gap-4;
+}
+.header__side {
+  @apply w-fit flex flex-row items-center gap-2;
+}
+.logo {
+  @apply h-15;
+}
+.header__nav-button {
+  @apply size-10 cursor-pointer;
+}
+.nav-button__icon {
+  @apply size-full;
+}
+
+.container_main {
+  @apply px-10 2xl:px-[var(--left-right-margin)];
+}
+.main {
+  @apply pt-[var(--top-margin)] w-full;
+}
+
+.nav {
+  @apply fixed z-40 w-full h-full flex items-center;
+}
+.nav__content {
+  @apply flex flex-col gap-6;
+}
+.nav__list {
+  counter-reset: nav;
+  @apply flex flex-col gap-4;
+}
+.nav__item {
+  counter-increment: nav;
+}
+.nav__name-page::before {
+  content: '0' counter(nav);
+  @apply text-base  mr-2 font-normal cursor-default pointer-events-none;
+  font-variation-settings:
+    'wght' 600,
+    'wdth' 125;
+}
+.nav__name-page {
+  @apply text-7xl duration-300 uppercase cursor-pointer;
+  font-variation-settings:
+    'wght' 600,
+    'wdth' 180;
+  &:hover {
+    font-variation-settings:
+      'wght' 600,
+      'wdth' 150;
+  }
+}
+.nav__social {
+  @apply flex flex-nowrap gap-10 pl-6;
+}
+.nav__link_wrapper {
+  @apply w-fit overflow-hidden;
+}
+.social__link {
+  @apply mb-1 whitespace-nowrap text-2xl lowercase;
+  font-variation-settings:
+    'wght' 500,
+    'wdth' 180;
+}
+.social__link-line {
+  @apply relative w-full h-0.5 mb-1.5 bottom-0 left-0 bg-white origin-bottom-right duration-300;
 }
